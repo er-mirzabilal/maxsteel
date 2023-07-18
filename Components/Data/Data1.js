@@ -3,32 +3,32 @@
 export const Data1 =[
     {
         image: "/images/r1.jpg",
-        title: "Steel Stairs good quality",
-        about: "Steel Stairs good quality Steel Stairs good quality Steel Stairs good quality Steel Stairs good quality"
+        title: "Partition Aluminum",
+        about: "Fabrication fiber aluminum partition 1.6 Aluminum or 6mm glass"
     },
     {
         image: "/images/r2.jpg",
-        title: "Steel Stairs good quality",
-        about: "Steel Stairs good quality Steel Stairs good quality Steel Stairs good quality Steel Stairs good quality"
+        title: "Divider Partition Aluminum",
+        about: "Aluminum 1.2mm, 1.6mm or 2mm and glass 6mm, 12mm"
     },
     {
         image: "/images/r3.jpg",
-        title: "Steel Stairs good quality",
-        about: "Steel Stairs good quality Steel Stairs good quality Steel Stairs good quality Steel Stairs good quality"
+        title: "Office Partition Aluminum",
+        about: "Aluminum 1.2mm, 1.6mm or 2mm and glass 6mm, 12mm"
     },
     {
-        image: "/images/r4.jpg",
-        title: "Steel Stairs good quality",
-        about: "Steel Stairs good quality Steel Stairs good quality Steel Stairs good quality Steel Stairs good quality"
+        image: "/images/r4.jpeg",
+        title: "Double Partition Aluminum",
+        about: "Aluminum 1.2mm, 1.6mm or 2mm and glass 6mm, 12mm"
     },
     {
         image: "/images/r5.jpg",
-        title: "Steel Stairs good quality",
-        about: "Steel Stairs good quality Steel Stairs good quality Steel Stairs good quality Steel Stairs good quality"
+        title: "Hide Partition Aluminum",
+        about: "Aluminum 1.2mm, 1.6mm or 2mm and glass 6mm, 12mm"
     },
     {
-        image: "/images/r6.jpg",
-        title: "Steel Stairs good quality",
-        about: "Steel Stairs good quality Steel Stairs good quality Steel Stairs good quality Steel Stairs good quality"
+        image: "/images/r6.webp",
+        title: "Open Partition Aluminum",
+        about: "Aluminum 1.2mm, 1.6mm or 2mm and glass 6mm, 12mm"
     },
 ]

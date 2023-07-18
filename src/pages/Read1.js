@@ -13,7 +13,7 @@ export default function Read1 () {
          <Box sx={{width: "82%", margin: "auto", textAlign: "center", marginTop: {md:10, xs: 8}, paddingBottom: {md:16, xs: 8}}}>
             <Box sx={{textAlign: "center", width: "100%"}}>
                 <Typography sx={{fontSize: 18}}>WE OFFER</Typography>
-                <Typography sx={{fontSize: 40, fontWeight: "bold"}}>Steel Fabrication</Typography>
+                <Typography sx={{fontSize: 40, fontWeight: "bold"}}>Aluminum partition</Typography>
             </Box>
             <Grid container  sx={{ marginTop: 8, justifyContent: "center",gap:{lg: 15, md: 11, sm: 8, xs: 5}, width: "100%", backgroundColor: "#181D4E", padding: 3 }}>
                 {Data1.map((item)=> (
