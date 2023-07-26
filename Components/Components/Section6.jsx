@@ -6,7 +6,7 @@ export default function Section6 () {
         <>
         <Box sx={{backgroundColor: "#1C1E36", width: "100%",height: {lg: 300, md:480, sm: 500, xs: "100%"}, paddingBottom: {sm:0, xs: 10}}}>
             <Grid container gap={10} sx={{width: "80%", margin: "auto", justifyContent: "center", alignItems: "center", paddingTop: 8}}>
-                <Link to="/ClientData">
+                <Link href="/ClientData">
                 <Box sx={{textAlign: "center"}}>
                     <Typography sx={{fontSize: 120, opacity: 0.1, color: "white", zIndex: 0}}>50</Typography>
                     <Typography sx={{marginTop: -13, fontSize: 20, fontWeight: "bold", color: "white", zIndex: 1}}>Projects</Typography>
