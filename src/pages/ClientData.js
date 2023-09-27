@@ -3,42 +3,86 @@ import { clientData } from "../../Components/Data/clientData";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
+// const Timer = ({ initialTime }) => {
+//   const [timeRemaining, setTimeRemaining] = useState(initialTime);
+
+//   useEffect(() => {
+//     const parseTime = (timeString) => {
+//       const [months, days] = timeString.split(" months ");
+//       return {
+//         months: parseInt(months),
+//         days: parseInt(days.split(" days")[0]),
+//       };
+//     };
+
+//     const targetDate = new Date(initialTime);
+//     const currentDate = new Date();
+
+//     const timeDifferenceInMilliseconds = targetDate - currentDate;
+//     const timeDifferenceInSeconds = timeDifferenceInMilliseconds / 1000;
+
+//     let months = Math.floor(timeDifferenceInSeconds / (60 * 60 * 24 * 30));
+//     let days = Math.floor(
+//       (timeDifferenceInSeconds % (60 * 60 * 24 * 30)) / (60 * 60 * 24)
+//     );
+
+//     const timer = setInterval(() => {
+//       if (months > 0 || days > 0) {
+//         if (days === 0 && months > 0) {
+//           months -= 1;
+//           days = 30;
+//         }
+//         if (days > 0) {
+//           days -= 1;
+//         }
+
+//         setTimeRemaining(`${months} months ${days} days`);
+//       } else {
+//         clearInterval(timer);
+//       }
+//     }, 1000);
+
+//     return () => clearInterval(timer);
+//   }, [initialTime]);
+
+//   return (
+//     <Box>
+//       <Typography>Time Remaining: {timeRemaining}</Typography>
+//     </Box>
+//   );
+// };
+const parseTime = (timeString) => {
+  const matches = timeString.match(/(\d+) months (\d+) days/);
+  if (matches) {
+    const months = parseInt(matches[1]);
+    const days = parseInt(matches[2]);
+    return { months, days };
+  }
+  return { months: 0, days: 0 };
+};
+
 const Timer = ({ initialTime }) => {
   const [timeRemaining, setTimeRemaining] = useState(initialTime);
 
   useEffect(() => {
-    const parseTime = (timeString) => {
-      const [months, days] = timeString.split(" months ");
-      return {
-        months: parseInt(months),
-        days: parseInt(days.split(" days")[0]),
-      };
-    };
+    const { months, days } = parseTime(initialTime);
 
-    const targetDate = new Date(initialTime);
-    const currentDate = new Date();
-
-    const timeDifferenceInMilliseconds = targetDate - currentDate;
-    const timeDifferenceInSeconds = timeDifferenceInMilliseconds / 1000;
-
-    let months = Math.floor(timeDifferenceInSeconds / (60 * 60 * 24 * 30));
-    let days = Math.floor(
-      (timeDifferenceInSeconds % (60 * 60 * 24 * 30)) / (60 * 60 * 24)
-    );
+    const targetDate = new Date();
+    targetDate.setMonth(targetDate.getMonth() + months);
+    targetDate.setDate(targetDate.getDate() + days);
 
     const timer = setInterval(() => {
-      if (months > 0 || days > 0) {
-        if (days === 0 && months > 0) {
-          months -= 1;
-          days = 30;
-        }
-        if (days > 0) {
-          days -= 1;
-        }
+      const currentDate = new Date();
+      const timeDifferenceInMilliseconds = targetDate - currentDate;
 
-        setTimeRemaining(`${months} months ${days} days`);
+      if (timeDifferenceInMilliseconds > 0) {
+        const remainingDays = Math.floor(
+          timeDifferenceInMilliseconds / (1000 * 60 * 60 * 24)
+        );
+        setTimeRemaining(`${remainingDays} days`);
       } else {
         clearInterval(timer);
+        setTimeRemaining("Time expired");
       }
     }, 1000);
 
@@ -46,9 +90,9 @@ const Timer = ({ initialTime }) => {
   }, [initialTime]);
 
   return (
-    <Box>
-      <Typography>Time Remaining: {timeRemaining}</Typography>
-    </Box>
+    <div>
+      <p>Time Remaining: {timeRemaining}</p>
+    </div>
   );
 };
 
@@ -60,6 +104,7 @@ export default function ClientData() {
         width: "100%",
         height: { md: "100vh", xs: "100%" },
         color: "white",
+        overflow: "auto"
       }}
     >
       <Typography
